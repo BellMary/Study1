@@ -1,0 +1,50 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 75px;
+
+    &__logo-and-nav {
+        display: flex;
+        align-items: center;
+
+        flex-shrink: 0;
+        flex-grow: 0;
+    }
+
+    &__nav-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 30px;
+        margin-left: 35px;
+        width: 39.06vw;
+    }
+
+
+    
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        
+    }
+
+    &__sign-in {
+        color: #0070A0;
+    }
+
+    &__book-a-demo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 140px;
+        height: 36px;
+
+        color: white;
+
+        background-color: #0070A0;
+    }
+}
