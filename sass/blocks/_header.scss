@@ -9,8 +9,12 @@
         display: flex;
         align-items: center;
 
-        flex-shrink: 0;
         flex-grow: 0;
+        min-width: 0;
+    }
+
+    &__logo {
+        flex-shrink: 0;
     }
 
     &__nav-list {
@@ -19,10 +23,11 @@
         align-items: center;
         gap: 30px;
         margin-left: 35px;
-        width: 39.06vw;
     }
 
     &__nav-item {
+        white-space: nowrap;
+
         transition: all 0.3s ease;
         &:hover {
             color: #0070A0;
@@ -36,11 +41,14 @@
         display: flex;
         align-items: center;
         gap: 30px;
+
         flex-shrink: 0;
         flex-grow: 0;
     }
 
     &__sign-in {
+        white-space: nowrap;
+
         color: #0070A0;
 
         transition: all 0.3s ease;
@@ -57,6 +65,7 @@
         height: 36px;
 
         color: #ffffff;
+        white-space: nowrap; 
 
         background-color: #0070A0;
 

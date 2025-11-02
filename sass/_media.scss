@@ -3,13 +3,71 @@
 }
 
 @include laptor {
-    
+    body {
+        font-size: 13px;
+    }
+
+    .header {
+        padding: 0 85px; 
+
+        &__nav-list {
+            gap: 20px;
+        }
+
+        &__buttons {
+            gap: 20px;
+        }
+
+        &__book-a-demo {
+            width: 100px;
+        }
+    }
 }
 
 @include tablet {
-    
+    body {
+        font-size: 12px;
+    }
+
+    .header {
+        padding: 0 50px;
+
+        &__nav-list {
+            display: none;
+        }
+
+        &__buttons {
+            gap: 12px;
+        }
+
+        &__book-a-demo {
+            width: 110px;
+        }
+    }
 }
 
 @include mobile {
-    
+    body {
+        font-size: 11px;
+    }
+
+    .header {
+        padding: 0 10px; 
+        height: 60px; 
+
+        &__logo {
+            img {
+                max-height: 30px; 
+            }
+        }
+
+        &__buttons {
+            gap: 10px;
+        }
+
+        &__book-a-demo {
+            width: 100px;
+            height: 32px;
+        }
+    }
 }
