@@ -1,0 +1,29 @@
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin desktop() {
+  @media (max-width: $breakpoint_desktop) {
+    @content;
+  }
+}
+
+@mixin laptor() {
+  @media (max-width: $breakpoint_laptop) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media (max-width: $breakpoint_tablet) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media (max-width: $breakpoint_mobile) {
+    @content;
+  }
+}

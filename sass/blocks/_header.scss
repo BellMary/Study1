@@ -22,6 +22,13 @@
         width: 39.06vw;
     }
 
+    &__nav-item {
+        transition: all 0.3s ease;
+        &:hover {
+            color: #0070A0;
+        }
+    }
+
 
     
 
@@ -29,11 +36,17 @@
         display: flex;
         align-items: center;
         gap: 30px;
-        
+        flex-shrink: 0;
+        flex-grow: 0;
     }
 
     &__sign-in {
         color: #0070A0;
+
+        transition: all 0.3s ease;
+        &:hover {
+            color: #000000;
+        }
     }
 
     &__book-a-demo {
@@ -43,8 +56,14 @@
         width: 140px;
         height: 36px;
 
-        color: white;
+        color: #ffffff;
 
         background-color: #0070A0;
+
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
     }
 }

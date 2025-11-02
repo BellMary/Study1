@@ -37,6 +37,13 @@
   margin-left: 35px;
   width: 39.06vw;
 }
+.header__nav-item {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.header__nav-item:hover {
+  color: #0070A0;
+}
 .header__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -45,9 +52,19 @@
       -ms-flex-align: center;
           align-items: center;
   gap: 30px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
 }
 .header__sign-in {
   color: #0070A0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.header__sign-in:hover {
+  color: #000000;
 }
 .header__book-a-demo {
   display: -webkit-box;
@@ -61,18 +78,18 @@
           justify-content: center;
   width: 140px;
   height: 36px;
-  color: white;
+  color: #ffffff;
   background-color: #0070A0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
-
-:root {
-  --container-width: 1440px,
-  --container-padding: 135px,
-  --font-size-regular: 15px, ;
+.header__book-a-demo:hover {
+  background-color: #000000;
+  color: #ffffff;
 }
 
 @font-face {
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
   src: url(/Study1/fonts/Inter-Regular.woff2) format("woff2");
   font-weight: 400;
   font-style: normal;
@@ -317,4 +334,11 @@ svg * {
             transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+:root {
+  --container-width: 1440px,
+  --container-padding: 135px,
+  --font-size-regular: 15px,
+
+  --transition-duration: 0.4s;
 }
