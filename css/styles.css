@@ -31,12 +31,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 30px;
+  gap: 24px;
   margin-left: 35px;
 }
 .header__nav-item {
@@ -47,14 +45,14 @@
 .header__nav-item:hover {
   color: #0070A0;
 }
-.header__buttons {
+.header__actions {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 30px;
+  gap: 10px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   -webkit-box-flex: 0;
@@ -70,7 +68,8 @@
 .header__sign-in:hover {
   color: #000000;
 }
-.header__book-a-demo {
+
+.button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,7 +79,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 140px;
+  width: 139px;
   height: 36px;
   color: #ffffff;
   white-space: nowrap;
@@ -88,13 +87,64 @@
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.header__book-a-demo:hover {
+.button:hover {
   background-color: #000000;
   color: #ffffff;
 }
+.button--transparent {
+  width: 89px;
+  height: 36px;
+  color: #0070A0;
+  background-color: transparent;
+}
+.button--transparent:hover {
+  color: #0070A0;
+  border: #0070A0 0.5px solid;
+  background-color: transparent;
+}
+.button--arrow {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+.button--arrow:hover {
+  border: none;
+}
+.button--arrow::after {
+  content: url(/Study1/img/arrow.svg);
+  width: 14px;
+  height: 21px;
+  display: block;
+}
+.button--bigger {
+  width: 174px;
+  height: 43px;
+}
+
+.burger {
+  width: 40px;
+  height: 40px;
+  background-color: #0070A0;
+  -webkit-mask: url(/Study1/img/burger-menu.svg) no-repeat center;
+          mask: url(/Study1/img/burger-menu.svg) no-repeat center;
+  mask-size: contain;
+  -webkit-mask: url(/Study1/img/burger-menu.svg) no-repeat center;
+  -webkit-mask-size: contain;
+  position: absolute;
+  right: 0;
+  display: none;
+}
+.burger:hover {
+  cursor: pointer;
+  background-color: #000000;
+}
 
 @font-face {
-  font-family: "Inter", sans-serif;
+  font-family: Inter;
   src: url(/Study1/fonts/Inter-Regular.woff2) format("woff2");
   font-weight: 400;
   font-style: normal;
@@ -127,7 +177,7 @@ a {
 
 .container {
   max-width: 1440px;
-  padding: 0 135px;
+  padding: 0 max(16px, 8.07vw);
   margin: 0 auto;
 }
 
@@ -348,56 +398,176 @@ svg * {
   --transition-duration: 0.4s;
 }
 
+.main__promo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  height: 584px;
+}
+.main__promo-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 21px;
+}
+.main__promo-title {
+  width: 485px;
+  font-family: Faunces;
+  font-weight: 400;
+  font-size: 58px;
+  line-height: 63.8px;
+}
+.main__promo-text {
+  width: 380px;
+  font-size: 20px;
+}
+.main__promo-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 24px;
+}
+
 @media (max-width: 1024px) {
   body {
-    font-size: 13px;
+    font-size: 14px;
   }
-  .header {
-    padding: 0 85px;
+  .container {
+    max-width: none;
+    padding: 0 5vw;
   }
   .header__nav-list {
+    display: none;
+  }
+  .header__actions {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  .main__promo {
+    height: 484px;
+  }
+  .main__promo-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 21px;
+  }
+  .main__promo-title {
+    width: 385px;
+    font-size: 48px;
+    line-height: 63.8px;
+  }
+  .main__promo-text {
+    width: 280px;
+    font-size: 18px;
+  }
+  .main__promo-actions {
     gap: 20px;
   }
-  .header__buttons {
-    gap: 20px;
-  }
-  .header__book-a-demo {
-    width: 100px;
+  .main__promo-img {
+    width: 352px;
   }
 }
 @media (max-width: 767px) {
   body {
     font-size: 12px;
   }
-  .header {
-    padding: 0 50px;
-  }
-  .header__nav-list {
-    display: none;
-  }
-  .header__buttons {
-    gap: 12px;
-  }
   .header__book-a-demo {
     width: 110px;
+  }
+  .main__promo {
+    height: 484px;
+  }
+  .main__promo-content {
+    gap: 21px;
+  }
+  .main__promo-title {
+    width: 485px;
+    font-size: 48px;
+    line-height: 63.8px;
+  }
+  .main__promo-text {
+    width: 320px;
+    font-size: 18px;
+  }
+  .main__promo-actions {
+    gap: 18px;
+  }
+  .main__promo-img {
+    display: none;
+  }
+  .button--bigger {
+    width: 150px;
+    height: 40px;
   }
 }
 @media (max-width: 576px) {
   body {
-    font-size: 11px;
+    font-size: 12px;
   }
-  .header {
-    padding: 0 10px;
-    height: 60px;
+  .container {
+    max-width: none;
+    padding: 0 4vw;
   }
   .header__logo img {
-    max-height: 30px;
+    max-height: 40px;
   }
-  .header__buttons {
-    gap: 10px;
+  .main__promo {
+    height: 484px;
   }
-  .header__book-a-demo {
-    width: 100px;
-    height: 32px;
+  .main__promo-content {
+    gap: 25px;
+  }
+  .main__promo-title {
+    width: 100%;
+    font-size: 45px;
+    line-height: 45.8px;
+  }
+  .main__promo-text {
+    width: 100%;
+    font-size: 18px;
+  }
+  .main__promo-actions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 15px;
+    margin-top: 35PX;
+    font-size: 16px;
+  }
+  .main__promo-img {
+    display: none;
+  }
+  .button--bigger {
+    width: 180px;
+    height: 45px;
   }
 }
